@@ -1,6 +1,8 @@
 # TinyChat
 Self-host your own AI chat with Docker and Ollama!
 
+---
+
 ## Get Started
 ### Requirements
 - [`git`](https://git-scm.com/)
@@ -30,6 +32,9 @@ bash start.sh
 
 ### 3. Open TinyChat
 Open [localhost:5173](http://localhost:5173), select a model and proceed to chat!
+
+---
+
 
 ## Manually Getting Started
 ### Requirements
