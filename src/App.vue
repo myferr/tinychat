@@ -21,23 +21,30 @@
                 "
             >
                 <div
+                    v-if="!selectedModel"
+                    style="text-align: center; margin-top: 2rem"
+                >
+                    <h1 style="font-size: 8rem">tinychat</h1>
+                    <p style="color: #888">Select a model to start chatting.</p>
+                </div>
+
+                <div
+                    v-else
                     v-for="(msg, idx) in messages"
                     :key="idx"
                     :class="['message', msg.role]"
                     style="margin-bottom: 0.5rem"
                 >
-                    <strong
-                        >{{
-                            msg.role === "user" ? "You" : selectedModel
-                        }}:</strong
-                    >
+                    <strong>
+                        {{ msg.role === "user" ? "You" : selectedModel }}:
+                    </strong>
                     <p>{{ msg.content }}</p>
                 </div>
             </section>
 
             <form
                 @submit.prevent="sendMessage"
-                style="padding: 1rem; display: flex"
+                style="padding: 1rem 1rem 1.5rem 1rem; display: flex"
             >
                 <input
                     v-model="input"
