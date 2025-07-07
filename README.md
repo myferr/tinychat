@@ -1,5 +1,29 @@
-# Vue 3 + TypeScript + Vite
+# TinyChat
+Self-host your own AI chat with Docker and Ollama!
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Get Started
+### Requirements
+- [`git`](https://git-scm.com/)
+- [Docker / Docker Desktop](https://docker.com/)
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+### 1. Clone the repository
+In your command line run
+
+```sh
+git clone https://github.com/myferr/tinychat.git
+```
+
+After that run `cd tinychat` to navigate into the repository directory.
+
+### 2. Run the start script
+On **Windows** operating systems run the following command in PowerShell
+
+```sh
+./start.ps1
+```
+
+On **MacOS**/**Linux** you want to run the `.sh` script like so
+
+```sh
+bash start.sh
+```
