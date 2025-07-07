@@ -12,7 +12,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-const ollamaURL = "http://localhost:11434"
+const ollamaURL = "http://host.docker.internal:11434"
 
 type GenerateRequest struct {
 	Content   string `json:"content" binding:"required"`
