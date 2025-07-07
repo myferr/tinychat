@@ -27,3 +27,6 @@ On **MacOS**/**Linux** you want to run the `.sh` script like so
 ```sh
 bash start.sh
 ```
+
+### 3. Open TinyChat
+Open [localhost:5173](http://localhost:5173), select a model and proceed to chat!
