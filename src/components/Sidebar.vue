@@ -1,5 +1,7 @@
 <template>
-    <aside style="width: 250px; background: #222; padding: 1rem">
+    <aside
+        style="width: 250px; min-width: 250px; background: #222; padding: 1rem"
+    >
         <h2>Models</h2>
         <ul style="list-style: none; padding: 0">
             <li

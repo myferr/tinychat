@@ -16,7 +16,7 @@
                 style="
                     flex-grow: 1;
                     padding: 1rem;
-                    padding-top: 4rem;
+                    padding-top: 2rem;
                     overflow-y: auto;
                 "
             >
@@ -133,8 +133,17 @@ async function sendMessage() {
             const { done, value } = await reader.read();
             if (done) break;
             const chunk = decoder.decode(value);
-            aiResponse += chunk;
-            messages[messages.length - 1].content = aiResponse;
+            const lines = chunk
+                .split("\n")
+                .filter((line) => line.startsWith("data: "));
+
+            for (const line of lines) {
+                const json = JSON.parse(line.slice(6));
+                if (json.response) {
+                    aiResponse += json.response;
+                    messages[messages.length - 1].content = aiResponse;
+                }
+            }
         }
     } catch (err) {
         console.error(err);
@@ -151,18 +160,19 @@ onMounted(() => {
     loadModels();
 });
 </script>
-
 <style scoped>
-.message.user p {
-    background-color: #222;
-    padding: 0.5rem;
-    border-radius: 8px;
-    max-width: 60%;
+.message {
+    display: flex;
+    flex-direction: column;
 }
+.message.user p,
 .message.assistant p {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
     background-color: #222;
     padding: 0.5rem;
     border-radius: 8px;
-    max-width: 60%;
+    max-width: 90%;
 }
 </style>
